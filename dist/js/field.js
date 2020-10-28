@@ -510,6 +510,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["resource", "resourceName", "resourceId", "field", "callEvery", "markAsDone", "defaultValue"],
@@ -574,7 +575,8 @@ var render = function() {
     {
       directives: [
         { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
-      ]
+      ],
+      staticClass: " border-b border-40"
     },
     [
       _c(
