@@ -509,8 +509,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["resource", "resourceName", "resourceId", "field", "callEvery", "markAsDone", "defaultValue"],
@@ -576,155 +574,142 @@ var render = function() {
       directives: [
         { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
       ],
-      staticClass: " border-b border-40"
+      staticClass: "flex border-b border-40 -mx-6 px-6"
     },
     [
+      _c("div", { staticClass: "w-1/4 py-4" }, [
+        _c("h4", { staticClass: "font-normal text-80" }, [
+          _vm._v(_vm._s(this.field.name))
+        ])
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         {
-          staticClass: "flex border-b border-40 remove-bottom-border",
-          attrs: { value: "100" }
+          staticClass: "w-3/4 py-4 break-words",
+          staticStyle: { display: "flex" }
         },
         [
-          _c("div", { staticClass: "w-1/4 py-4" }, [
-            _c("h4", { staticClass: "font-normal text-80" }, [
-              _vm._v(_vm._s(this.field.name))
-            ])
-          ]),
-          _vm._v(" "),
           _c(
-            "div",
+            "span",
             {
-              staticClass: "w-3/4 py-4 break-words",
-              staticStyle: { display: "flex" }
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.showAnimation && !_vm.stop,
+                  expression: "showAnimation && !stop"
+                }
+              ],
+              staticClass: "mr-3 text-60"
             },
             [
               _c(
-                "span",
+                "svg",
                 {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.showAnimation && !_vm.stop,
-                      expression: "showAnimation && !stop"
-                    }
-                  ],
-                  staticClass: "mr-3 text-60"
+                  staticStyle: { width: "30px" },
+                  attrs: {
+                    viewBox: "0 0 120 30",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    fill: "currentColor"
+                  }
                 },
                 [
-                  _c(
-                    "svg",
-                    {
-                      staticStyle: { width: "30px" },
+                  _c("circle", { attrs: { cx: "15", cy: "15", r: "15" } }, [
+                    _c("animate", {
                       attrs: {
-                        viewBox: "0 0 120 30",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        fill: "currentColor"
+                        attributeName: "r",
+                        from: "15",
+                        to: "15",
+                        begin: "0s",
+                        dur: "0.8s",
+                        values: "15;9;15",
+                        calcMode: "linear",
+                        repeatCount: "indefinite"
+                      }
+                    }),
+                    _c("animate", {
+                      attrs: {
+                        attributeName: "fill-opacity",
+                        from: "1",
+                        to: "1",
+                        begin: "0s",
+                        dur: "0.8s",
+                        values: "1;.5;1",
+                        calcMode: "linear",
+                        repeatCount: "indefinite"
+                      }
+                    })
+                  ]),
+                  _c(
+                    "circle",
+                    {
+                      attrs: {
+                        cx: "60",
+                        cy: "15",
+                        r: "9",
+                        "fill-opacity": "0.3"
                       }
                     },
                     [
-                      _c("circle", { attrs: { cx: "15", cy: "15", r: "15" } }, [
-                        _c("animate", {
-                          attrs: {
-                            attributeName: "r",
-                            from: "15",
-                            to: "15",
-                            begin: "0s",
-                            dur: "0.8s",
-                            values: "15;9;15",
-                            calcMode: "linear",
-                            repeatCount: "indefinite"
-                          }
-                        }),
-                        _c("animate", {
-                          attrs: {
-                            attributeName: "fill-opacity",
-                            from: "1",
-                            to: "1",
-                            begin: "0s",
-                            dur: "0.8s",
-                            values: "1;.5;1",
-                            calcMode: "linear",
-                            repeatCount: "indefinite"
-                          }
-                        })
-                      ]),
-                      _c(
-                        "circle",
-                        {
-                          attrs: {
-                            cx: "60",
-                            cy: "15",
-                            r: "9",
-                            "fill-opacity": "0.3"
-                          }
-                        },
-                        [
-                          _c("animate", {
-                            attrs: {
-                              attributeName: "r",
-                              from: "9",
-                              to: "9",
-                              begin: "0s",
-                              dur: "0.8s",
-                              values: "9;15;9",
-                              calcMode: "linear",
-                              repeatCount: "indefinite"
-                            }
-                          }),
-                          _c("animate", {
-                            attrs: {
-                              attributeName: "fill-opacity",
-                              from: "0.5",
-                              to: "0.5",
-                              begin: "0s",
-                              dur: "0.8s",
-                              values: ".5;1;.5",
-                              calcMode: "linear",
-                              repeatCount: "indefinite"
-                            }
-                          })
-                        ]
-                      ),
-                      _c(
-                        "circle",
-                        { attrs: { cx: "105", cy: "15", r: "15" } },
-                        [
-                          _c("animate", {
-                            attrs: {
-                              attributeName: "r",
-                              from: "15",
-                              to: "15",
-                              begin: "0s",
-                              dur: "0.8s",
-                              values: "15;9;15",
-                              calcMode: "linear",
-                              repeatCount: "indefinite"
-                            }
-                          }),
-                          _c("animate", {
-                            attrs: {
-                              attributeName: "fill-opacity",
-                              from: "1",
-                              to: "1",
-                              begin: "0s",
-                              dur: "0.8s",
-                              values: "1;.5;1",
-                              calcMode: "linear",
-                              repeatCount: "indefinite"
-                            }
-                          })
-                        ]
-                      )
+                      _c("animate", {
+                        attrs: {
+                          attributeName: "r",
+                          from: "9",
+                          to: "9",
+                          begin: "0s",
+                          dur: "0.8s",
+                          values: "9;15;9",
+                          calcMode: "linear",
+                          repeatCount: "indefinite"
+                        }
+                      }),
+                      _c("animate", {
+                        attrs: {
+                          attributeName: "fill-opacity",
+                          from: "0.5",
+                          to: "0.5",
+                          begin: "0s",
+                          dur: "0.8s",
+                          values: ".5;1;.5",
+                          calcMode: "linear",
+                          repeatCount: "indefinite"
+                        }
+                      })
                     ]
-                  )
+                  ),
+                  _c("circle", { attrs: { cx: "105", cy: "15", r: "15" } }, [
+                    _c("animate", {
+                      attrs: {
+                        attributeName: "r",
+                        from: "15",
+                        to: "15",
+                        begin: "0s",
+                        dur: "0.8s",
+                        values: "15;9;15",
+                        calcMode: "linear",
+                        repeatCount: "indefinite"
+                      }
+                    }),
+                    _c("animate", {
+                      attrs: {
+                        attributeName: "fill-opacity",
+                        from: "1",
+                        to: "1",
+                        begin: "0s",
+                        dur: "0.8s",
+                        values: "1;.5;1",
+                        calcMode: "linear",
+                        repeatCount: "indefinite"
+                      }
+                    })
+                  ])
                 ]
-              ),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(_vm.value))])
+              )
             ]
-          )
+          ),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.value))])
         ]
       )
     ]
