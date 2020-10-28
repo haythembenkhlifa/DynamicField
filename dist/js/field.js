@@ -584,7 +584,11 @@ var render = function() {
           attrs: { value: "100" }
         },
         [
-          _vm._m(0),
+          _c("div", { staticClass: "w-1/4 py-4" }, [
+            _c("h4", { staticClass: "font-normal text-80" }, [
+              _vm._v(_vm._s(this.field.name))
+            ])
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -724,18 +728,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/4 py-4" }, [
-      _c("h4", { staticClass: "font-normal text-80" }, [
-        _vm._v("Dynamic Field")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
