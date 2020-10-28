@@ -31,10 +31,9 @@ export default {
           //return response.data;
           this.stop = response.data.stop;
           this.show = response.data.show;
-
+          this.value = response.data.value;
 
           if (this.stop == false) {
-            this.value = response.data.value;
             this.showAnimation = response.data.showAnimation;
           }
         })

@@ -23,15 +23,14 @@ export default {
       axios
         .get(this.field.endPoint)
         .then((response) => {
-
+          //return response.data;
           this.stop = response.data.stop;
           this.show = response.data.show;
+          this.value = response.data.value;
 
           if (this.stop == false) {
-            this.value = response.data.value;
             this.showAnimation = response.data.showAnimation;
           }
-
         })
         .catch((error) => {
           console.log(error.response.data);

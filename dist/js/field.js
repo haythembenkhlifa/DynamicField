@@ -269,12 +269,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       axios.get(this.field.endPoint).then(function (response) {
-
+        //return response.data;
         _this.stop = response.data.stop;
         _this.show = response.data.show;
+        _this.value = response.data.value;
 
         if (_this.stop == false) {
-          _this.value = response.data.value;
           _this.showAnimation = response.data.showAnimation;
         }
       }).catch(function (error) {
@@ -530,9 +530,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //return response.data;
         _this.stop = response.data.stop;
         _this.show = response.data.show;
+        _this.value = response.data.value;
 
         if (_this.stop == false) {
-          _this.value = response.data.value;
           _this.showAnimation = response.data.showAnimation;
         }
       }).catch(function (error) {
