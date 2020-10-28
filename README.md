@@ -8,7 +8,7 @@ Laravel Nova Dynamic field
 composer require haythem/dynamic-field
 ```
 
-# Installation :
+# How to use it :
 
 create an end-point first
 
