@@ -254,13 +254,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["resource", "resourceName", "resourceId", "field", "callEvery", "markAsDone", "defaultValue"],
+  props: ["resource", "resourceName", "resourceId", "field", "callEvery", "markAsDone", "defaultValue", "badgesMap"],
   data: function data() {
     return {
       value: "__",
       show: true,
       stop: false,
-      showAnimation: false
+      showAnimation: false,
+      badgesMapArray: [],
+      listOfClasses: [],
+      myclass: "",
+      mystyle: ""
     };
   },
 
@@ -270,6 +274,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       axios.get(this.field.endPoint).then(function (response) {
         //return response.data;
+        _this.setFieldClass();
         _this.stop = response.data.stop;
         _this.show = response.data.show;
         _this.value = response.data.value;
@@ -286,17 +291,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       setInterval(function () {
         if (!_this2.stop) {
+          _this2.setFieldClass();
           _this2.getFieldValue();
         }
       }, this.field.callEvery);
+    },
+    setFieldClass: function setFieldClass() {
+
+      if (this.field.badgesMap) {
+
+        if (this.listOfClasses[this.badgesMapArray[this.value]]) {
+          this.myclass = this.listOfClasses[this.badgesMapArray[this.value]];
+          this.mystyle = "";
+        } else {
+          this.myclass = "px-2 py-2 rounded-full uppercase text-xs font-bold text-white";
+          this.mystyle = "background-color:" + this.badgesMapArray[this.value] + ";";
+        }
+      }
     }
   },
   mounted: function mounted() {
+    var _this3 = this;
+
+    this.listOfClasses['primary'] = "bg-primary px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    // this.listOfClasses['secondary']="bg-secondary px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    this.listOfClasses['success'] = "bg-success px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    this.listOfClasses['danger'] = "bg-danger px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    this.listOfClasses['warning'] = "bg-warning px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
+    this.listOfClasses['info'] = "bg-info px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    // this.listOfClasses['light']="bg-light-dark px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
+    // this.listOfClasses['dark']="bg-dark px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    // this.listOfClasses['muted']="bg-muted px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    // this.listOfClasses['white']="bg-white px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
+
+    if (this.field.badgesMap) {
+      var resultObject = Array.of(JSON.parse(JSON.stringify(this.field.badgesMap)))[0];
+
+      Object.keys(resultObject).map(function (field) {
+        _this3.badgesMapArray[field] = resultObject[field];
+      });
+    }
 
     if (this.field.markAsDone == true) {
       this.showAnimation = false;
       this.stop = true;
       this.value = this.field.defaultValue;
+      this.setFieldClass();
     } else {
       this.setFieldValue();
     }
@@ -429,7 +469,9 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.value))])
+      _c("span", { class: _vm.myclass, style: _vm.mystyle }, [
+        _vm._v(_vm._s(_vm.value))
+      ])
     ]
   )
 }
@@ -517,7 +559,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       value: "__",
       show: true,
       stop: false,
-      showAnimation: false
+      showAnimation: false,
+      badgesMapArray: [],
+      listOfClasses: [],
+      myclass: "",
+      mystyle: ""
     };
   },
 
@@ -527,6 +573,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       axios.get(this.field.endPoint).then(function (response) {
         //return response.data;
+        _this.setFieldClass();
         _this.stop = response.data.stop;
         _this.show = response.data.show;
         _this.value = response.data.value;
@@ -543,12 +590,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       setInterval(function () {
         if (!_this2.stop) {
+          _this2.setFieldClass();
           _this2.getFieldValue();
         }
       }, this.field.callEvery);
+    },
+    setFieldClass: function setFieldClass() {
+
+      if (this.field.badgesMap) {
+
+        if (this.listOfClasses[this.badgesMapArray[this.value]]) {
+          this.myclass = this.listOfClasses[this.badgesMapArray[this.value]];
+          this.mystyle = "";
+        } else {
+          this.myclass = "px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
+          this.mystyle = "background-color:" + this.badgesMapArray[this.value] + ";";
+        }
+      }
     }
   },
   mounted: function mounted() {
+    var _this3 = this;
+
+    this.listOfClasses['primary'] = "bg-primary px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    // this.listOfClasses['secondary']="bg-secondary px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    this.listOfClasses['success'] = "bg-success px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    this.listOfClasses['danger'] = "bg-danger px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    this.listOfClasses['warning'] = "bg-warning px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
+    this.listOfClasses['info'] = "bg-info px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    // this.listOfClasses['light']="bg-light-dark px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
+    // this.listOfClasses['dark']="bg-dark px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    // this.listOfClasses['muted']="bg-muted px-2 py-1 rounded-full uppercase text-xs font-bold text-white";
+    // this.listOfClasses['white']="bg-white px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
+
+    if (this.field.badgesMap) {
+      var resultObject = Array.of(JSON.parse(JSON.stringify(this.field.badgesMap)))[0];
+
+      Object.keys(resultObject).map(function (field) {
+        _this3.badgesMapArray[field] = resultObject[field];
+      });
+    }
 
     if (this.field.markAsDone == true) {
       this.showAnimation = false;
@@ -709,7 +790,9 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.value))])
+          _c("p", { class: _vm.myclass, style: _vm.mystyle }, [
+            _vm._v(_vm._s(_vm.value))
+          ])
         ]
       )
     ]

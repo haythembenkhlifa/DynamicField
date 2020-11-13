@@ -31,4 +31,10 @@ class DynamicField extends Field
     {
         return $this->withMeta(["markAsDone" => $markAsDone, "defaultValue" => $defaultValue]);
     }
+
+    public function badgesMap($badgesMap = [])
+    {
+        return $this->withMeta(["badgesMap" => $badgesMap]);
+    }
+
 }
