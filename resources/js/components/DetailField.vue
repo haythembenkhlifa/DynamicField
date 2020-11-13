@@ -66,7 +66,7 @@ export default {
             this.myclass = "px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
             this.mystyle="background-color:"+this.badgesMapArray[this.value]+";";
         }
-    //alert(this.mystyle)
+
     }
 
     }
@@ -106,7 +106,6 @@ export default {
     }
     else
     {
-        alert("mark as done false");
 
         this.setFieldValue();
     }

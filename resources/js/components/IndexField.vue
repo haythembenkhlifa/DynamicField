@@ -100,8 +100,6 @@ export default {
     }
     else
     {
-        alert("mark as done false");
-
         this.setFieldValue();
     }
 
