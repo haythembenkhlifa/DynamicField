@@ -304,7 +304,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           this.myclass = this.listOfClasses[this.badgesMapArray[this.value]];
           this.mystyle = "";
         } else {
-          this.myclass = "px-2 py-2 rounded-full uppercase text-xs font-bold text-white";
+          this.myclass = "px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
           this.mystyle = "background-color:" + this.badgesMapArray[this.value] + ";";
         }
       }
