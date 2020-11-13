@@ -66,13 +66,14 @@ export default {
             this.myclass = "px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
             this.mystyle="background-color:"+this.badgesMapArray[this.value]+";";
         }
-
+    //alert(this.mystyle)
     }
 
     }
 
   },
   mounted() {
+
 
 
 
@@ -96,19 +97,19 @@ export default {
 
 
     }
-
-    if (this.field.markAsDone == true) {
-            this.setFieldClass();
+    if (this.field.markAsDone) {
             this.showAnimation = false;
             this.stop = true;
             this.value = this.field.defaultValue;
+            this.setFieldClass();
+
     }
     else
     {
-         this.setFieldValue();
+        alert("mark as done false");
+
+        this.setFieldValue();
     }
-
-
   },
 };
 </script>

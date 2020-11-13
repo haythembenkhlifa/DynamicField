@@ -331,13 +331,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this3.badgesMapArray[field] = resultObject[field];
       });
     }
-
-    if (this.field.markAsDone == true) {
-      this.setFieldClass();
+    if (this.field.markAsDone) {
       this.showAnimation = false;
       this.stop = true;
       this.value = this.field.defaultValue;
+      this.setFieldClass();
     } else {
+      alert("mark as done false");
+
       this.setFieldValue();
     }
   }
@@ -606,6 +607,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           this.myclass = "px-2 py-1 rounded-full uppercase text-xs font-bold text-dark";
           this.mystyle = "background-color:" + this.badgesMapArray[this.value] + ";";
         }
+        //alert(this.mystyle)
       }
     }
   },
@@ -630,13 +632,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this3.badgesMapArray[field] = resultObject[field];
       });
     }
-
-    if (this.field.markAsDone == true) {
-      this.setFieldClass();
+    if (this.field.markAsDone) {
       this.showAnimation = false;
       this.stop = true;
       this.value = this.field.defaultValue;
+      this.setFieldClass();
     } else {
+      alert("mark as done false");
+
       this.setFieldValue();
     }
   }

@@ -91,15 +91,17 @@ export default {
 
 
     }
-
-    if (this.field.markAsDone == true) {
-            this.setFieldClass();
+    if (this.field.markAsDone) {
             this.showAnimation = false;
             this.stop = true;
             this.value = this.field.defaultValue;
+            this.setFieldClass();
+
     }
     else
     {
+        alert("mark as done false");
+
         this.setFieldValue();
     }
 
