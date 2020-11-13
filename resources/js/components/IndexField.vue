@@ -43,8 +43,8 @@ export default {
     },
     setFieldValue() {
       setInterval(() => {
+        this.setFieldClass();
         if (!this.stop) {
-            this.setFieldClass();
             this.getFieldValue();
         }
       }, this.field.callEvery);
@@ -93,10 +93,10 @@ export default {
     }
 
     if (this.field.markAsDone == true) {
+            this.setFieldClass();
             this.showAnimation = false;
             this.stop = true;
             this.value = this.field.defaultValue;
-            this.setFieldClass();
     }
     else
     {

@@ -290,8 +290,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this2 = this;
 
       setInterval(function () {
+        _this2.setFieldClass();
         if (!_this2.stop) {
-          _this2.setFieldClass();
           _this2.getFieldValue();
         }
       }, this.field.callEvery);
@@ -333,10 +333,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
 
     if (this.field.markAsDone == true) {
+      this.setFieldClass();
       this.showAnimation = false;
       this.stop = true;
       this.value = this.field.defaultValue;
-      this.setFieldClass();
     } else {
       this.setFieldValue();
     }
@@ -589,8 +589,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this2 = this;
 
       setInterval(function () {
+        _this2.setFieldClass();
         if (!_this2.stop) {
-          _this2.setFieldClass();
           _this2.getFieldValue();
         }
       }, this.field.callEvery);
@@ -632,6 +632,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
 
     if (this.field.markAsDone == true) {
+      this.setFieldClass();
       this.showAnimation = false;
       this.stop = true;
       this.value = this.field.defaultValue;
